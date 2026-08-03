@@ -149,7 +149,7 @@ export function forwardPath<T extends Env = BlankEnv>(options?: Partial<ProxyFor
                 location = `${forwardUrlObj.origin}${location}`
             }
             headers.delete('Location')
-            headers.set('Location', new URL(thisUrlObj.origin + '/' + location).href)
+            headers.set('Location', new URL(/* thisUrlObj.origin + */ '/' + location).href)
         }
 
         return new Response(resp.body, {
